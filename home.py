@@ -8,7 +8,7 @@ import json
 import requests
 # from werkzeug.utils import secure_filename
 
-UPLOAD_FOLDER = '/app/static/data'
+UPLOAD_FOLDER = '/app/static'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 
 app = Flask(__name__)
@@ -17,6 +17,10 @@ app = Flask(__name__)
 LD_LIBRARY_PATH='/app'
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+@app.route('/')
+def kys():
+    return render_template('index.html')
 
 @app.route('/', methods=["POST"])
 def main():
