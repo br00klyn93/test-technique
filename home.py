@@ -38,6 +38,6 @@ def main():
         if file:
             filename = "test.png"
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return redirect(url_for('uploaded_file', filename=filename))
+            return render_template("index.html")
             
     return render_template("index.html")
